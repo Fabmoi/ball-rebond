@@ -38,7 +38,7 @@
         collisionWithBall();
             ballOneX += dirOneX;                                // position horizontale balle one
             ballOneY += dirOneY;                                // position verticale balle one
-            oneTimeID = setTimeout(moveBallOne, 5);             // timer de vitesse balle one
+            oneTimeID = setTimeout(moveBallOne, 7);             // timer de vitesse balle one
     };
     moveBallTwo();                                              // chargement fonction moveball balle two
     function moveBallTwo() {                                    // fonction moveball balle one
@@ -101,15 +101,15 @@
         var rayonBallOne = ballOne.offsetWidth/2;                               // 7
         var rayonBallTwo = ballTwo.offsetWidth/2;                               // 7
 
-        if (positionBallOneY + rayonBallOne == positionBallTwoY + rayonBallTwo) {
+        if (positionBallOneY - rayonBallOneTwo == positionBallTwoY || positionBallOneY + rayonBallOneTwo == positionBallTwoY) {
             dirOneY = - dirOneY;
             dirTwoY = - dirTwoY;
-            console.log('pouf-Y');
-        }
+            console.log('pouf-Y', positionBallOneY, positionBallTwoY);
+        };
+        if (positionBallTwoY - rayonBallOneTwo == positionBallOneY || positionBallTwoY + rayonBallOneTwo == positionBallOneY) {
+            dirOneY = - dirOneY;
+            dirTwoY = - dirTwoY;
+            console.log('pouf-Y', positionBallTwoY, positionBallOneY);
+        };
         
-        /* if (positionBallOneX + rayonBallOne == positionBallTwoX + rayonBallTwo) {
-            dirOneX = - dirOneX;
-            dirTwoX = - dirTwoX;
-            console.log('pouf-X');
-        } */
     };
