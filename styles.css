@@ -4,10 +4,10 @@
         padding: 11px;
         font-size: 13px;
     }
-    h3 {
+    h3 {                            /* titre zone de jeu */
         text-align: center;
     }
-    #game-zone {
+    #game-zone {                    /* zone de jeu */
         width: 500px;
         height: 370px;
         margin: auto;
@@ -16,21 +16,31 @@
         position: relative;
         cursor: not-allowed;
     }
-    .info-ball {
+    .info-ball {                    /* bloc infos sur les balles */
+        max-width: max-content;
+        margin: auto;
         text-align: center;
+        font-weight: bold;
     }
-    #ball-one,
-    #ball-two {
+    .position-ball {                /* bloc position par balle */
+        padding: 3px;
+        border: 1px solid rgb(0,0,0);
+    }
+    #ball-one {                     /* couleur balle one */
         width: 14px;
         height: 14px;
         border-radius: 50%;
+        background-color: rgb(0,0,0);
         position: absolute;
         top: calc(100% - 30px);
         left: calc(50% - 7px);
     }
-    #ball-one {
-        background-color: rgb(0,0,0);
-    }
-    #ball-two {
+    #ball-two {                     /* couleur balle two */
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
         background-color: rgb(100,100,100);
+        position: absolute;
+        top: calc(100% - 10px);
+        left: calc(50% - 7px);
     }

@@ -7,89 +7,32 @@
     <link type="text/css" rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
-<bodirOneY>
+<body>
     <h3>Zone de jeu, 500px / 370px</h3>
     <div id="game-zone">
         <div id="ball-one"></div>
         <div id="ball-two"></div>
     </div>
-        <br>
-    <div class="info-ball" id="info-ball-one">...</div>
-        <br>
-    <div class="info-ball" id="info-ball-two">...</div>
-<script type="text/javascript">
-    
-    var gameZone = document.querySelector("#game-zone");        // zone de jeu 
-    var ballOne = document.querySelector("#ball-one");          // balle one
-    var ballTwo = document.querySelector("#ball-two");          // balle two
-
-    var gameZoneW = gameZone.clientWidth;                       // largeur zone jeu sans bordure
-    var gameZoneH = gameZone.clientHeight;                      // hauteur zone jeu sans bordure
-
-    var rayonBallOne = ballOne.offsetWidth/2;
-    var ballOneX = ballOne.offsetLeft - rayonBallOne;
-    var ballOneY = ballOne.offsetTop - rayonBallOne;
-   
-    var rayonBallTwo = ballTwo.offsetWidth/2;
-    var ballTwoX = ballTwo.offsetLeft - rayonBallTwo;
-    var ballTwoY = ballTwo.offsetTop - rayonBallTwo;
-
-    var dirOneX = 1;                                            // direction horizontale balle one
-    var dirOneY = -1;                                           // direction verticale balle one
-
-    var dirTwoX = -1;                                           // direction horizontale balle two
-    var dirTwoY = 1;                                            // direction verticale balle two
-
-    moveBall(); 
-    function moveBall() {
-        afficheInfos();
-        ballOne.style.left = ballTwoX - rayonBallOne + "px";
-        ballOne.style.top = ballOneY - rayonBallOne + "px";
-        CollisionWithSides();
-            ballOneX += dirOneX;
-            ballOneY += dirOneY;
-            oneTimeID = setTimeout(moveBall, 5);
-    };
-    moveBallTwo();
-    function moveBallTwo() {
-            ballTwo.style.left = ballTwoX - rayonBallTwo + "px";
-            ballTwo.style.top = ballTwoY - rayonBallTwo + "px";
-        CollisionWithSidesTwo();
-            ballTwoX += dirTwoX;
-            ballTwoY += dirTwoY;
-            twoTimeID = setTimeout(moveBallTwo, 12);
-    }; 
-
-    function CollisionWithSidesTwo() {};            // déclaration fonction pour les collisions balle two
-    function CollisionWithSides() {
-                                                    // collisions horizontales balle one 
-        if (ballOneX + dirOneX > gameZoneW - rayonBallOne || ballOneX + dirOneX < rayonBallOne) {
-            dirOneX = - dirOneX;
-        };
-                                                    // collisions verticales balle one
-        if (ballOneY + dirOneY > gameZoneH - rayonBallOne || ballOneY + dirOneY < rayonBallOne) {
-            dirOneY = - dirOneY;
-        };
-                                                    // collisions horizontales balle two
-        if (ballTwoX + dirTwoX > gameZoneW - rayonBallTwo || ballTwoX + dirTwoX < rayonBallTwo) {
-        dirTwoX = - dirTwoX;
-        };
-                                                    // collisions verticales balle two
-        if (ballTwoY + dirTwoY > gameZoneH - rayonBallTwo || ballTwoY + dirTwoY < rayonBallTwo) {
-            dirTwoY = - dirTwoY;
-        };
-    };
-
-    function afficheInfos() {
-                                                    
-    var infoBallOne = document.querySelector("#info-ball-one");     // sélection id info balle one 
-    var infoBallTwo = document.querySelector("#info-ball-two");     // sélection id info balle two
-        infoBallOne.innerHTML = "ballOneX : " + ballOneX + " ballOneY : " + ballOneY; // inscritptions info balle one
-        infoBallTwo.innerHTML = "ballTwoX : " + ballTwoX + " ballTwoY : " + ballTwoY; // inscritptions info balle two
-    };
-
-
-
-</script>
-</bodirOneY>
+        <br> 
+        <div class="info-ball">
+            <div class="position-ball">
+                <div>Position horizontale balle noire
+                    <div id="position-X-ball-one"></div>
+                </div>
+                <div>Position verticale balle noire
+                    <div id="position-Y-ball-one"></div>
+                </div>
+            </div>
+            <br>
+            <div class="position-ball">  
+                <div>Position horizontale balle grise
+                    <div id="position-X-ball-two"></div>
+                </div>
+                <div>Position verticale balle grise
+                    <div id="position-Y-ball-two"></div>
+                </div>
+            </div>
+        </div>
+<script type="text/javascript" src="script.js"></script>
+</body>
 </html>
